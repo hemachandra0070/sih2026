@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #17365D;
+  --color-primary-dark: #102A48;
+  --color-accent: #E58A1F;
+  --color-accent-light: #FFF4E5;
+  --color-background: #F7F8FA;
+  --color-surface: #FFFFFF;
+  --color-text-primary: #17202A;
+  --color-text-secondary: #586575;
+  --color-border: #D9DEE5;
+  --color-success: #16845B;
+  --color-success-bg: #EAF7F1;
+  --color-warning: #B7791F;
+  --color-warning-bg: #FFF7E6;
+  --color-error: #C53030;
+  --color-error-bg: #FDECEC;
+  --color-info: #2563EB;
+  --color-info-bg: #EEF5FF;
+
+  --font-sans: "Inter", system-ui, sans-serif;
+
+  --radius-input: 8px;
+  --radius-button: 8px;
+  --radius-card: 12px;
+  --radius-dialog: 12px;
+  --radius-badge: 999px;
+
+  --spacing-1: 4px;
+  --spacing-2: 8px;
+  --spacing-3: 12px;
+  --spacing-4: 16px;
+  --spacing-5: 24px;
+  --spacing-6: 32px;
+  --spacing-7: 40px;
+  --spacing-8: 48px;
+  --spacing-9: 64px;
+  --spacing-10: 80px;
+
+  --shadow-card: 0 1px 3px 0 rgb(0 0 0 / 0.05), 0 1px 2px -1px rgb(0 0 0 / 0.05);
+  --shadow-dialog: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+:root {
+  --background: var(--color-background);
+  --foreground: var(--color-text-primary);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  border-color: var(--color-border);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  background: var(--color-primary);
+  color: white;
+  padding: var(--spacing-2) var(--spacing-4);
+  z-index: 100;
+  transition: top 0.2s;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+.leaflet-container {
+  font-family: var(--font-sans);
+}

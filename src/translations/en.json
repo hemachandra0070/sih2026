@@ -1,0 +1,238 @@
+{
+  "common": {
+    "back": "Back",
+    "continue": "Continue",
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "save": "Save",
+    "edit": "Edit",
+    "view": "View",
+    "loading": "Loading...",
+    "error": "Error",
+    "retry": "Try again",
+    "close": "Close",
+    "next": "Next",
+    "previous": "Previous",
+    "skip": "Skip",
+    "done": "Done"
+  },
+  "navigation": {
+    "home": "Home",
+    "assess": "Assessment",
+    "results": "Results",
+    "calculator": "Calculator",
+    "partners": "Partners",
+    "schemes": "Schemes",
+    "chat": "Assistant"
+  },
+  "header": {
+    "serviceName": "Scheme Matching Service",
+    "language": "Language",
+    "english": "English",
+    "hindi": "हिन्दी",
+    "telugu": "తెలుగు"
+  },
+  "footer": {
+    "about": "About this service",
+    "privacy": "Privacy",
+    "accessibility": "Accessibility",
+    "sourceNote": "Government source information",
+    "copyright": "© 2024 Government of India"
+  },
+  "landing": {
+    "hero": {
+      "title": "Find the right government support for you.",
+      "subtitle": "Tell us what you need. We'll help you find a suitable scheme, estimate the financing and locate an authorized partner.",
+      "cta": "Start Assessment"
+    },
+    "cards": {
+      "business": {
+        "title": "Start a business",
+        "description": "Find financing suited to your project and circumstances."
+      },
+      "education": {
+        "title": "Education loan",
+        "description": "Explore financial support for your studies."
+      },
+      "explore": {
+        "title": "Explore schemes",
+        "description": "Browse available government financial schemes."
+      }
+    },
+    "howItWorks": {
+      "title": "How it works",
+      "steps": [
+        "Tell us what you need",
+        "Get matched to schemes",
+        "Understand your financing",
+        "Find an authorized partner"
+      ]
+    },
+    "trust": {
+      "governmentSource": "Government-source information",
+      "multilingual": "Multilingual support",
+      "accessible": "Accessible by design"
+    }
+  },
+  "assessment": {
+    "steps": {
+      "1": "Are you an SC beneficiary?",
+      "2": "What do you need support for?",
+      "3": "What is your business activity or course?",
+      "4": "What is the project or education cost?",
+      "5": "What is your annual family income?",
+      "6": "Where are you located?"
+    },
+    "help": {
+      "income": "Your annual family income helps us check which schemes may be suitable for your circumstances.",
+      "location": "We use your location to find nearby authorized channel partners.",
+      "scStatus": "This helps us check which schemes you may be eligible for.",
+      "purpose": "Select the purpose that best matches your need.",
+      "activity": "Enter your business activity (e.g., tailoring) or course name.",
+      "cost": "Enter the total amount you need for your project or education."
+    },
+    "progress": {
+      "understanding": "Understanding your requirements",
+      "checkingEligibility": "Checking eligibility",
+      "matchingSchemes": "Matching schemes",
+      "calculatingFinancing": "Calculating financing",
+      "findingPartners": "Finding nearby partners"
+    },
+    "location": {
+      "useCurrent": "Use my current location",
+      "searchLocation": "Search location",
+      "searchPlaceholder": "Enter city, district, or pincode"
+    }
+  },
+  "results": {
+    "title": "Your recommended schemes",
+    "subtitle": "Based on the information you provided.",
+    "bestMatch": "BEST MATCH",
+    "matchScore": "{{score}}% MATCH",
+    "reasons": "Why this was recommended",
+    "financialFacts": "Financial details",
+    "actions": {
+      "viewScheme": "View scheme",
+      "calculateEMI": "Calculate EMI",
+      "findPartner": "Find an authorized partner"
+    },
+    "alternatives": "Other suitable schemes",
+    "source": "Official scheme information",
+    "empty": {
+      "title": "We couldn't find a suitable match",
+      "description": "Based on the information provided, none of the current schemes appear to fit.",
+      "reviewAnswers": "Review my answers",
+      "exploreAll": "Explore all schemes"
+    }
+  },
+  "schemeDetails": {
+    "sections": {
+      "about": "About this scheme",
+      "financial": "Financial details",
+      "eligibility": "Eligibility",
+      "documents": "Documents required",
+      "howToApply": "How to apply",
+      "sources": "Sources"
+    },
+    "actions": {
+      "calculateEMI": "Calculate EMI",
+      "findPartner": "Find partner"
+    }
+  },
+  "calculator": {
+    "title": "Estimate your repayment",
+    "inputs": {
+      "loanAmount": "Loan amount",
+      "interestRate": "Interest rate",
+      "tenure": "Repayment period",
+      "moratorium": "Moratorium period"
+    },
+    "outputs": {
+      "emi": "Estimated monthly EMI",
+      "totalInterest": "Total interest",
+      "totalRepayment": "Total repayment",
+      "duration": "Repayment duration"
+    },
+    "estimateNotice": {
+      "title": "Estimated calculation",
+      "description": "This is an estimate based on the selected scheme parameters. Final terms may depend on the authorized channel partner."
+    }
+  },
+  "partners": {
+    "title": "Authorized channel partners",
+    "subtitle": "Nearby partners compatible with your selected scheme",
+    "map": {
+      "title": "Partner map"
+    },
+    "list": {
+      "title": "Nearby partners"
+    },
+    "card": {
+      "authorized": "Authorized",
+      "schemeCompatible": "Scheme compatible",
+      "performanceUnavailable": "Performance unavailable",
+      "distance": "{{distance}} away",
+      "viewDetails": "View details",
+      "directions": "Directions"
+    },
+    "details": {
+      "partnerInfo": "Partner information",
+      "address": "Address",
+      "contact": "Contact",
+      "compatibleSchemes": "Compatible schemes",
+      "performance": "Performance",
+      "performanceUnavailable": "Performance information is currently unavailable from the authoritative source.",
+      "directions": "Directions",
+      "startApplication": "Start application guidance"
+    },
+    "empty": {
+      "title": "Partner information unavailable",
+      "description": "We couldn't find authorized partners for the selected scheme in your area."
+    }
+  },
+  "schemes": {
+    "title": "Explore schemes",
+    "subtitle": "Find schemes by purpose, loan type or need.",
+    "search": {
+      "placeholder": "Search schemes..."
+    },
+    "filters": {
+      "all": "All",
+      "business": "Business",
+      "education": "Education",
+      "micro": "Micro",
+      "termLoan": "Term Loan"
+    },
+    "card": {
+      "maxLoan": "Max loan: {{amount}}",
+      "financing": "{{percentage}}% financing",
+      "viewDetails": "View details"
+    }
+  },
+  "chat": {
+    "title": "Ask about schemes",
+    "subtitle": "I can help you understand eligibility, financing, documents and application steps.",
+    "quickActions": {
+      "findScheme": "Find a scheme",
+      "checkEligibility": "Check eligibility",
+      "calculateEMI": "Calculate EMI",
+      "requiredDocuments": "Required documents"
+    },
+    "placeholder": "Type your question...",
+    "send": "Send"
+  },
+  "states": {
+    "loading": {
+      "recommendations": "Finding suitable schemes",
+      "partners": "Finding nearby partners",
+      "schemes": "Loading schemes"
+    },
+    "error": {
+      "generic": "Something went wrong",
+      "recommendations": "We couldn't find your recommendations",
+      "recommendationsDesc": "We weren't able to complete the assessment right now.",
+      "partners": "We couldn't load partner information",
+      "tryAgain": "Try again"
+    }
+  }
+}
