@@ -1,19 +1,25 @@
 export const colors = {
   primary: {
-    DEFAULT: '#17365D',
-    dark: '#102A48',
+    DEFAULT: '#ff385c',
+    dark: '#e00b41',
+    disabled: '#ffd1da',
   },
   accent: {
-    DEFAULT: '#E58A1F',
-    light: '#FFF4E5',
+    DEFAULT: '#ff385c',
+    light: '#fff0f3',
   },
-  background: '#F7F8FA',
+  background: '#f7f7f7',
   surface: '#FFFFFF',
+  surfaceSoft: '#f7f7f7',
+  surfaceStrong: '#f2f2f2',
+  onPrimary: '#ffffff',
   text: {
-    primary: '#17202A',
-    secondary: '#586575',
+    primary: '#222222',
+    secondary: '#6a6a6a',
+    body: '#3f3f3f',
   },
-  border: '#D9DEE5',
+  border: '#dddddd',
+  hairlineSoft: '#ebebeb',
   success: {
     DEFAULT: '#16845B',
     bg: '#EAF7F1',
@@ -23,7 +29,7 @@ export const colors = {
     bg: '#FFF7E6',
   },
   error: {
-    DEFAULT: '#C53030',
+    DEFAULT: '#c13515',
     bg: '#FDECEC',
   },
   info: {
@@ -48,8 +54,8 @@ export const spacing = {
 export const radius = {
   input: '8px',
   button: '8px',
-  card: '12px',
-  dialog: '12px',
+  card: '14px',
+  dialog: '14px',
   badge: '999px',
 } as const;
 
@@ -87,8 +93,9 @@ export const typography = {
 } as const;
 
 export const shadows = {
-  card: '0 1px 3px 0 rgb(0 0 0 / 0.05), 0 1px 2px -1px rgb(0 0 0 / 0.05)',
-  dialog: '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)',
+  card: '0 1px 3px 0 rgb(0 0 0 / 0.04), 0 1px 2px -1px rgb(0 0 0 / 0.03)',
+  dialog: '0 10px 15px -3px rgb(0 0 0 / 0.08), 0 4px 6px -4px rgb(0 0 0 / 0.06)',
+  hover: 'rgba(0, 0, 0, 0.02) 0 0 0 1px, rgba(0, 0, 0, 0.04) 0 2px 6px 0, rgba(0, 0, 0, 0.1) 0 4px 8px 0',
 } as const;
 
 export const breakpoints = {

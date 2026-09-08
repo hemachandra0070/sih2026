@@ -20,7 +20,8 @@
     "home": "Home",
     "assess": "Assessment",
     "results": "Results",
-    "calculator": "Calculator",
+    "calculator": "Calculate EMI",
+    "calculateEmi": "Calculate EMI",
     "partners": "Partners",
     "schemes": "Schemes",
     "chat": "Assistant"

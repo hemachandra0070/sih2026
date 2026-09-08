@@ -30,6 +30,11 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/calculator" className="text-text-secondary transition-colors hover:text-text-primary">
+                  {t("navigation.calculateEmi")}
+                </Link>
+              </li>
+              <li>
                 <Link href="/partners" className="text-text-secondary transition-colors hover:text-text-primary">
                   {t("navigation.partners")}
                 </Link>

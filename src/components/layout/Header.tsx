@@ -20,6 +20,7 @@ const NAV_ITEMS = [
   { href: "/", label: "navigation.home" },
   { href: "/assess", label: "navigation.assess" },
   { href: "/schemes", label: "navigation.schemes" },
+  { href: "/calculator", label: "navigation.calculateEmi" },
   { href: "/partners", label: "navigation.partners" },
   { href: "/chat", label: "navigation.chat" },
 ];
@@ -35,16 +36,16 @@ export function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-40 w-full bg-primary text-white shadow-sm">
-      <div className="border-b border-white/10">
+    <header className="sticky top-0 z-40 w-full bg-white">
+      <div className="border-b border-border">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex h-14 items-center justify-between gap-4">
+          <div className="flex h-20 items-center justify-between gap-4">
             <div className="flex items-center gap-6">
-              <Link href="/" className="flex items-center gap-2.5 focus:outline-none focus:ring-2 focus:ring-accent rounded">
-                <span className="flex h-8 w-8 items-center justify-center rounded-[var(--radius-input)] bg-accent text-primary">
+              <Link href="/" className="flex items-center gap-2.5 focus:outline-none focus:ring-2 focus:ring-primary rounded">
+                <span className="flex h-8 w-8 items-center justify-center rounded-[var(--radius-input)] bg-primary text-white">
                   <Globe className="h-4 w-4" aria-hidden="true" />
                 </span>
-                <span className="hidden sm:block text-sm font-semibold leading-tight">
+                <span className="hidden sm:block text-sm font-semibold leading-tight text-text-primary">
                   {t("header.serviceName")}
                 </span>
               </Link>
@@ -53,7 +54,7 @@ export function Header() {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="rounded-[var(--radius-input)] px-3 py-2 text-sm font-medium text-white/90 transition-colors hover:bg-white/10 hover:text-white focus:outline-none focus:ring-2 focus:ring-accent"
+                    className="rounded-[var(--radius-input)] px-3 py-2 text-sm font-medium text-text-secondary transition-colors hover:bg-background hover:text-text-primary focus:outline-none focus:ring-2 focus:ring-primary"
                   >
                     {t(item.label)}
                   </Link>
@@ -64,7 +65,7 @@ export function Header() {
               <button
                 type="button"
                 onClick={handleLanguageChange}
-                className="inline-flex items-center gap-1.5 rounded-[var(--radius-input)] px-3 py-2 text-sm font-medium text-white/90 transition-colors hover:bg-white/10 hover:text-white focus:outline-none focus:ring-2 focus:ring-accent"
+                className="inline-flex items-center gap-1.5 rounded-[var(--radius-input)] px-3 py-2 text-sm font-medium text-text-secondary transition-colors hover:bg-background hover:text-text-primary focus:outline-none focus:ring-2 focus:ring-primary"
                 aria-label={t("header.language")}
               >
                 <Languages className="h-4 w-4" aria-hidden="true" />
@@ -76,7 +77,7 @@ export function Header() {
                     <Button
                       variant="ghost"
                       size="icon"
-                      className="text-white hover:bg-white/10 hover:text-white"
+                      className="text-text-primary hover:bg-background"
                       aria-label="Open menu"
                     >
                       <Menu className="h-5 w-5" aria-hidden="true" />

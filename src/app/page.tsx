@@ -87,22 +87,22 @@ const TRUST_ITEMS = [
 export default function LandingPage() {
   return (
     <div className="flex flex-col">
-      <section className="bg-primary text-white">
+      <section className="bg-white border-b border-border">
         <PageContainer maxWidth="xl" className="py-14 sm:py-20">
           <div className="mx-auto max-w-3xl text-center">
-            <p className="mx-auto inline-flex items-center gap-2 rounded-full border border-white/20 px-3 py-1 text-xs font-medium tracking-wide text-white/85">
-              <ShieldCheck className="h-3.5 w-3.5 text-accent" aria-hidden="true" />
+            <p className="mx-auto inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs font-medium tracking-wide text-text-primary">
+              <ShieldCheck className="h-3.5 w-3.5 text-primary" aria-hidden="true" />
               Schemes for Scheduled Caste beneficiaries under NSFDC
             </p>
-            <h1 className="mt-5 text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">
-              Find the right government support <span className="text-white">for you.</span>
+            <h1 className="mt-5 text-3xl font-bold leading-tight text-text-primary sm:text-4xl lg:text-5xl">
+              Find the right government support <span className="text-primary">for you.</span>
             </h1>
-            <p className="mx-auto mt-4 max-w-2xl text-base text-white/85 sm:text-lg">
+            <p className="mx-auto mt-4 max-w-2xl text-base text-text-secondary sm:text-lg">
               Tell us what you need. We&apos;ll help you find a suitable scheme, estimate
               the financing and locate an authorized partner.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <Button asChild size="lg" className="w-full bg-accent text-primary hover:bg-accent/90 sm:w-auto">
+              <Button asChild size="lg" className="w-full sm:w-auto">
                 <Link href="/assess">
                   Start Assessment <ArrowRight className="ml-2 h-5 w-5" aria-hidden="true" />
                 </Link>
@@ -111,7 +111,7 @@ export default function LandingPage() {
                 asChild
                 size="lg"
                 variant="outline"
-                className="w-full border-white/25 bg-transparent text-white hover:bg-white/10 sm:w-auto"
+                className="w-full sm:w-auto"
               >
                 <Link href="/schemes">Explore schemes</Link>
               </Button>
