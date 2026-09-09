@@ -5,7 +5,11 @@ import Link from "next/link";
 import { useEffect, useState, useSyncExternalStore } from "react";
 import { useAssessment } from "@/hooks/useAssessment";
 import type { AssessmentState } from "@/types/assessment";
-import { getRecommendations, type RecommendationRequest } from "@/lib/api/recommendations";
+import {
+  getRecommendations,
+  mapAnswersToRecommendationRequest,
+  type RecommendationRequest,
+} from "@/lib/api/recommendations";
 import type { Recommendation, RecommendationResponse } from "@/types/recommendation";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { PageHeader } from "@/components/layout/PageHeader";
@@ -40,6 +44,9 @@ function useIsMounted() {
 }
 
 function buildRequest(state: AssessmentState): RecommendationRequest {
+  if (state.answers && Object.keys(state.answers).length > 0) {
+    return mapAnswersToRecommendationRequest(state.answers);
+  }
   return {
     is_sc: state.isSC === true,
     annual_income: state.annualIncome ?? 0,

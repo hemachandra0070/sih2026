@@ -1,4 +1,7 @@
+import type { AssessmentAnswers, SupportedLanguage } from "@/lib/assessment/schema";
+
 export interface AssessmentState {
+  // Legacy / convenience getters
   applicantType: "individual" | "student" | "business";
   isSC: boolean | null;
   annualIncome: number | null;
@@ -13,6 +16,12 @@ export interface AssessmentState {
     address: string;
   } | null;
   currentStep: 1 | 2 | 3 | 4 | 5 | 6;
+
+  // Dynamic assessment state
+  answers: AssessmentAnswers;
+  currentQuestionId: string;
+  inReview: boolean;
+  language: SupportedLanguage;
 }
 
 export interface AssessmentStep {
