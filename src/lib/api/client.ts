@@ -1,4 +1,6 @@
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || "";
+const API_BASE_URL =
+  process.env.NEXT_PUBLIC_API_BASE_URL ||
+  "https://gates-mechanics-itunes-phantom.trycloudflare.com";
 
 class ApiClient {
   private baseUrl: string;

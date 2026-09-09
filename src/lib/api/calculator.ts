@@ -9,7 +9,22 @@ export async function calculateEMI(
   data: CalculateEMIRequest
 ): Promise<CalculatorOutputs> {
   try {
-    return await apiClient.post<CalculatorOutputs>("/api/calculate-emi", data);
+    const payload = {
+      loan_amount: data.loanAmount,
+      interest_rate: data.interestRate,
+      tenure_months: data.tenureYears * 12,
+      moratorium_months: data.moratoriumMonths || 0,
+      scheme_id: data.scheme_id,
+    };
+    const res = await apiClient.post<any>("/api/calculate-emi", payload);
+    return {
+      monthlyEMI: Math.round(res.monthly_emi ?? res.monthlyEMI),
+      totalInterest: Math.round(res.total_interest ?? res.totalInterest),
+      totalRepayment: Math.round(res.total_repayment ?? res.totalRepayment),
+      repaymentMonths: res.tenure_months ?? res.repaymentMonths ?? (data.tenureYears * 12),
+      principalAmount: res.loan_amount ?? res.principalAmount ?? data.loanAmount,
+      moratoriumMonths: res.moratorium_months ?? data.moratoriumMonths,
+    };
   } catch {
     return calculateEMILocal(data);
   }

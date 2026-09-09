@@ -97,11 +97,85 @@ export function mapAnswersToRecommendationRequest(answers: AssessmentAnswers): R
   };
 }
 
+function normalizeRecommendationResponse(raw: any): RecommendationResponse {
+  if (!raw || !Array.isArray(raw.recommendations)) {
+    throw new Error("Invalid response format");
+  }
+
+  const recommendations = raw.recommendations.map((rec: any, index: number) => {
+    if (rec.schemeId && rec.financialFacts) {
+      return rec;
+    }
+
+    const s = rec.scheme || {};
+    const maxLoan = s.max_loan_amount || rec.max_loan_amount || 500000;
+    const financingPercentage = s.financing_percentage || rec.financing_percentage || 90;
+    const interestRate = s.beneficiary_interest_rate || rec.beneficiary_interest_rate || 6.5;
+    const repaymentYears = Math.max(1, Math.round((s.repayment_period_months || 60) / 12));
+    const moratoriumMonths = s.moratorium_period_months ?? 3;
+
+    const reasons: string[] = (rec.reasons || []).map((r: string) => {
+      switch (r) {
+        case "COMMUNITY_MATCH":
+          return "Scheduled Caste community requirement satisfied (Rule E001)";
+        case "INCOME_WITHIN_LIMIT":
+          return "Family income fits within scheme eligibility criteria (Rule E002)";
+        case "ACTIVITY_MATCH":
+          return "Selected trade/enterprise activity is recognized under guidelines";
+        case "FINANCIAL_OK":
+          return "Project cost fits within scheme financing limits";
+        case "ACTIVITY_UNVERIFIED":
+          return "Activity subject to standard documentation check";
+        case "PARTNER_DATA_UNAVAILABLE":
+          return "Local partner allocation will be confirmed on application";
+        default:
+          return r.replace(/_/g, " ");
+      }
+    });
+
+    return {
+      schemeId: rec.scheme_id || rec.schemeId || `SCHEME-${index}`,
+      schemeName: rec.scheme_name || rec.schemeName || "Eligible Scheme",
+      schemeType: rec.scheme_type || "Income-generating finance",
+      score: typeof rec.score === "number" ? rec.score : 80,
+      reasons: reasons.length > 0 ? reasons : ["Fits your profile and financial need"],
+      explanation: reasons,
+      financialFacts: {
+        maxLoan,
+        financingPercentage,
+        interestRateMin: interestRate,
+        interestRateMax: interestRate,
+        repaymentYears,
+        moratoriumMonths,
+      },
+      isPrimary: index === 0,
+      matchFactors: {
+        eligibility: Math.min(40, Math.round((rec.score || 80) * 0.4)),
+        activityMatch: 25,
+        financialFit: 20,
+        partnerAvailability: 15,
+      },
+    };
+  });
+
+  return {
+    recommendations,
+    assessmentId: raw.assessment_id || raw.assessmentId || `kb-${Date.now()}`,
+    timestamp: raw.timestamp || new Date().toISOString(),
+  };
+}
+
 export async function getRecommendations(
   data: RecommendationRequest
 ): Promise<RecommendationResponse> {
   try {
-    return await apiClient.post<RecommendationResponse>("/api/recommend", data);
+    const raw = await apiClient.post<any>("/api/recommend", data);
+    const normalized = normalizeRecommendationResponse(raw);
+    if (normalized.recommendations.length > 0) {
+      return normalized;
+    }
+    const { getMockRecommendationsForRequest } = await import("@/lib/mock/recommendations");
+    return getMockRecommendationsForRequest(data);
   } catch {
     const { getMockRecommendationsForRequest } = await import("@/lib/mock/recommendations");
     return getMockRecommendationsForRequest(data);
