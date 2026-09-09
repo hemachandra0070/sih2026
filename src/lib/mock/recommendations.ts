@@ -103,7 +103,9 @@ export function getMockRecommendationsForRequest(req: RecommendationRequest): Re
     : `Income exceeds standard ₹5,00,000 limit; special state approval may be required (Rule E002)`;
 
   const scReason = isSC
-    ? "Scheduled Caste community requirement satisfied (Rule E001)"
+    ? req.is_sc_unknown
+      ? "Scheduled Caste status: Certificate to be verified at application (Rule E001)"
+      : "Scheduled Caste community requirement satisfied (Rule E001)"
     : "NSFDC schemes are targeted to Scheduled Caste beneficiaries (Rule E001)";
 
   if (purpose === "education") {
