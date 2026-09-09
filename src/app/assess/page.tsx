@@ -32,20 +32,23 @@ function useIsMounted() {
 }
 
 const BUSINESS_OPTIONS = [
-  { value: "tailoring", label: "Tailoring" },
-  { value: "food_processing", label: "Food processing" },
-  { value: "handicrafts", label: "Handicrafts" },
-  { value: "retail", label: "Retail / Shop" },
-  { value: "services", label: "Services" },
-  { value: "other", label: "Other" },
+  { value: "agriculture_dairy", label: "Agriculture & Dairy", description: "Dairy farming, poultry, goat rearing, horticulture, fisheries" },
+  { value: "tailoring_garments", label: "Tailoring & Garments", description: "Readymade garments, embroidery, fashion boutique" },
+  { value: "food_processing", label: "Food & Agro Processing", description: "Bakery, flour mill, spices grinding, food packaging" },
+  { value: "small_manufacturing", label: "Manufacturing & Crafts", description: "Handicrafts, furniture, fabrication, leather, pottery" },
+  { value: "retail_shop", label: "Retail & General Store", description: "Departmental store, electrical, medical, provisions shop" },
+  { value: "transport_services", label: "Transport & Commercial Vehicles", description: "Auto rickshaw, car/taxi, commercial pickup, tractor" },
+  { value: "services_repair", label: "Services & IT Center", description: "Computer center, beauty salon, diagnostic clinic, repair shop" },
+  { value: "other", label: "Other Eligible Business", description: "Any recognized NSFDC income-generating activity" },
 ];
 
 const EDUCATION_OPTIONS = [
-  { value: "btech", label: "B.Tech" },
-  { value: "mtech", label: "M.Tech" },
-  { value: "mba", label: "MBA" },
-  { value: "medical", label: "Medical / Nursing" },
-  { value: "other", label: "Other" },
+  { value: "engineering", label: "Engineering & Technology", description: "B.Tech, B.E, M.Tech, Polytechnic Diploma" },
+  { value: "medical_nursing", label: "Medical & Healthcare", description: "MBBS, BDS, B.Sc Nursing, Pharmacy, Physiotherapy" },
+  { value: "management", label: "Management & Commerce", description: "MBA, BBA, Hotel Management, Chartered Accountancy (CA)" },
+  { value: "it_computer", label: "Information Technology", description: "MCA, BCA, Computer Applications" },
+  { value: "law_higher", label: "Law & Higher Studies", description: "LLB, LLM, Journalism, Doctoral Studies (PhD/M.Phil)" },
+  { value: "other", label: "Other Professional Course", description: "Any recognized technical/professional degree in India or abroad" },
 ];
 
 export default function AssessPage() {
@@ -272,8 +275,8 @@ export default function AssessPage() {
           <CurrencyInput
             value={cost}
             onChange={(value) => updateField(isEducation ? "educationCost" : "projectCost", value)}
-            placeholder="e.g. 3,00,000"
-            suggestions={isEducation ? [200000, 600000, 1000000] : [100000, 300000, 500000]}
+            placeholder="e.g. 1,40,000"
+            suggestions={isEducation ? [500000, 1000000, 2000000, 4000000] : [100000, 140000, 500000, 2500000]}
           />
         );
       }
@@ -283,7 +286,7 @@ export default function AssessPage() {
             value={state.annualIncome}
             onChange={(value) => updateField("annualIncome", value)}
             placeholder="e.g. 3,50,000"
-            suggestions={[250000, 350000, 500000, 800000]}
+            suggestions={[150000, 250000, 350000, 500000]}
           />
         );
       case 6:

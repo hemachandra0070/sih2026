@@ -272,7 +272,11 @@ function PrimaryCard({ recommendation }: { recommendation: Recommendation }) {
           <FactTile label="Financing" value={`Up to ${f.financingPercentage}%`} />
           <FactTile
             label="Interest"
-            value={`${f.interestRateMin}–${f.interestRateMax}%`}
+            value={
+              f.interestRateMin === f.interestRateMax
+                ? `${f.interestRateMin}% p.a.`
+                : `${f.interestRateMin}–${f.interestRateMax}% p.a.`
+            }
           />
           <FactTile label="Repayment" value={`Up to ${f.repaymentYears} years`} />
         </div>

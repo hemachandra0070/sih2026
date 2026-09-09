@@ -20,7 +20,7 @@ export async function getRecommendations(
   try {
     return await apiClient.post<RecommendationResponse>("/api/recommend", data);
   } catch {
-    const { mockRecommendationResponse } = await import("@/lib/mock/recommendations");
-    return mockRecommendationResponse;
+    const { getMockRecommendationsForRequest } = await import("@/lib/mock/recommendations");
+    return getMockRecommendationsForRequest(data);
   }
 }

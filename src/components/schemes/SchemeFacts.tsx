@@ -21,7 +21,10 @@ function buildFacts(scheme: Scheme): Fact[] {
     { label: "Financing", value: `Up to ${scheme.financingPercentage}%` },
     {
       label: "Interest",
-      value: `${scheme.interestRateMin}–${scheme.interestRateMax}%`,
+      value:
+        scheme.interestRateMin === scheme.interestRateMax
+          ? `${scheme.interestRateMin}% p.a.`
+          : `${scheme.interestRateMin}–${scheme.interestRateMax}% p.a.`,
     },
     { label: "Repayment", value: `Up to ${scheme.repaymentPeriod} years` },
     {

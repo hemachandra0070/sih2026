@@ -3,10 +3,10 @@ import { getSchemeCalculatorParams } from "@/lib/api/calculator";
 import type { CalculatorInputs } from "@/types/calculator";
 
 const SPEC_DEFAULTS: CalculatorInputs = {
-  loanAmount: 270000,
-  interestRate: 7.5,
+  loanAmount: 250000,
+  interestRate: 8,
   tenureYears: 5,
-  moratoriumMonths: 3,
+  moratoriumMonths: 6,
 };
 
 interface CalculatorPageProps {
